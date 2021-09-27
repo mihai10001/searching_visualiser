@@ -1,0 +1,7 @@
+<div *ngFor="let row of input2DGrid">
+    <div *ngFor="let col of row" class="box"
+        [style.height]="(componentHeight / input2DGridCols).toString() + 'px'"
+        [style.width]="(componentWidth / input2DGridRows).toString() + 'px'"
+        [style.background-color]="col === 1 ? 'red' : 'blue'">
+    </div>
+</div>
