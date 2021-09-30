@@ -1,1 +1,28 @@
-<p>main-layout works!</p>
+<div class="row g-0">
+  <div class="col-12 p-1">
+    <app-searching-selector></app-searching-selector>
+  </div>
+
+  <div class="col-md-12 col-lg-9 p-1">
+    <mat-card class="h-100">
+      <ng-container *ngIf="selectedSortingFunctionKeys.length === 0">
+        <div class="display-4 text-center text-secondary">
+          <p><mat-icon class="display-4">visibility_off</mat-icon></p>
+          Empty canvas
+        </div>
+      </ng-container>
+
+      <div class="row g-0">
+        <div class="col-md-12 col-lg-12" *ngFor="let searchingFunction of selectedSearchingFunctionKeys" #searchingCanvases>
+          <div><kbd>{{ searchingFunction }}</kbd></div>
+          <app-searching-2D-chart
+            [componentWidth]="searchingCanvasWidth"
+            [componentHeight]="searchingCanvasHeight"
+            [searchingFunction]="searchingFunctions[selectedDataStructureKey][searchingFunction]"
+            [searchingFunctionName]="searchingFunction"
+          ></app-searching-2D-chart>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
