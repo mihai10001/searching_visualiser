@@ -5,11 +5,15 @@ import { MaterialModule } from '../material.module';
 
 import { MainLayoutRoutingModule } from './main-layout-routing.module';
 import { MainLayoutComponent } from './main-layout.component';
+import { Searching2DChartComponent } from './searching-2D-chart/searching-2D-chart.component';
+import { SearchingSelectorComponent } from './searching-selector/searching-selector.component';
 
 
 @NgModule({
   declarations: [
-    MainLayoutComponent
+    MainLayoutComponent,
+    Searching2DChartComponent,
+    SearchingSelectorComponent
   ],
   imports: [
     CommonModule,
