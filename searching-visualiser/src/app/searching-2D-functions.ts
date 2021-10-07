@@ -23,7 +23,7 @@ export const Searching2DGridFunctions: Searching2DGridFunctionObjectType = {
       if (row < 0 || col < 0 || row >= rows || col >= cols)
         return false;
 
-      if (grid[row][col] === 1)
+      if (grid[row][col] === Possible2DGridValues.Visited)
         return false;
 
       return true;
@@ -34,7 +34,7 @@ export const Searching2DGridFunctions: Searching2DGridFunctionObjectType = {
       let startRowIndex = 0;
       let startColIndex = 0;
 
-      grid[startRowIndex][startColIndex] = 1;
+      grid[startRowIndex][startColIndex] = Possible2DGridValues.Visited;
       q.push([startRowIndex, startColIndex]);
 
       while (q.length != 0) {
@@ -47,8 +47,8 @@ export const Searching2DGridFunctions: Searching2DGridFunctionObjectType = {
           let adjentColIndex = currentColIndex + directionVectorCols[i];
 
           if (isValid(grid, adjentRowIndex, adjentColIndex)) {
-            if (grid[adjentRowIndex][adjentColIndex] === 2) return;
-            grid[adjentRowIndex][adjentColIndex] = 1;
+            if (grid[adjentRowIndex][adjentColIndex] === Possible2DGridValues.NotVisited) return;
+            grid[adjentRowIndex][adjentColIndex] = Possible2DGridValues.Visited;
             q.push([adjentRowIndex, adjentColIndex]);
           }
 

@@ -8,7 +8,7 @@ export enum InputDataStructureTypes {
 export enum Possible2DGridValues {
     Start = 0,
     Visited = 1,
-    NotVisitied = 2,
+    NotVisited = 2,
     Goal = 3,
     Heuristic
 }
